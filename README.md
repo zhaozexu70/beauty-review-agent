@@ -41,7 +41,7 @@ flowchart LR
 | `kb/` | 演示知识库：洗发水成分通识、头皮类型、示例售后政策（**均为演示内容**） |
 | `data/` | 评测集、holdout 集、标签标注表（原始数据不提交，见 [data/README.md](data/README.md)） |
 | `outputs/` | 评测结果、数据质量表、报告、Agent 演示记录、LLM 缓存（用于无 Key 演示） |
-| `docs/` | [prompt 迭代记录](docs/prompt_iteration.md)、[面试讲解](docs/面试讲解.md) |
+| `docs/` | [prompt 迭代记录](docs/prompt_iteration.md) |
 | `tests/` | 35 个 pytest 测试，全部 mock LLM，不调用真实 API |
 
 ## 3. 数据
