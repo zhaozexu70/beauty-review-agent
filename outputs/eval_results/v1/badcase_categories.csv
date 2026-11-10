@@ -1,0 +1,30 @@
+﻿review_id,gold,pred,v2_pred,v2_correct,category_manual,review
+3609,positive,neutral,positive,True,C 有小保留但整体接受（人工标正向）,包装不错，但太香了，还以为漏了
+228,positive,neutral,positive,True,A 未使用/只陈述事实、无明显不满（人工标正向）,不知道是不是真品，反正是京东自营的，还是相信京东自营产品，体验完看看效果。
+2341,positive,neutral,neutral,False,D 标签可能有歧义/噪声,以前一直用飘柔的，这次试试清扬，买错款式了 = =
+3371,positive,neutral,positive,True,A 未使用/只陈述事实、无明显不满（人工标正向）,生产日期很新，能用到19年12月份。还没有用，不知道效果1怎么样。
+3438,positive,neutral,positive,True,A 未使用/只陈述事实、无明显不满（人工标正向）,看着还行，还没有用，但是一点没便宜，希望东西好吧
+3150,positive,neutral,positive,True,A 未使用/只陈述事实、无明显不满（人工标正向）,以前在商场买，价格贵很多，希望用起来效果一样。
+4059,positive,neutral,positive,True,A 未使用/只陈述事实、无明显不满（人工标正向）,还没用 我掉头发 希望这款可以帮到我
+2995,positive,neutral,positive,True,A 未使用/只陈述事实、无明显不满（人工标正向）,第一次买资源的产品，应该还不错吧？
+297,positive,neutral,positive,True,A 未使用/只陈述事实、无明显不满（人工标正向）,收到后还没用，比实体店里便宜很多
+3227,positive,neutral,positive,True,C 有小保留但整体接受（人工标正向）,东西好多两大罐，然后又送了两小罐，现在第一关还没有用完，去屑的效果还可以，但是没有想象的好，也许跟洗头的方式有关系吧
+1869,positive,neutral,positive,True,A 未使用/只陈述事实、无明显不满（人工标正向）,刚用，用短时间不平价。用后在追评！
+7885,negative,neutral,negative,True,B 夸产品但明确抱怨平台/价格（人工标负向）,商场里99还送东西，
+2186,positive,neutral,positive,True,A 未使用/只陈述事实、无明显不满（人工标正向）,生姜的以前没试过，试试看看效果怎么样
+2643,positive,neutral,positive,True,A 未使用/只陈述事实、无明显不满（人工标正向）,还没有用，等用了再来评价，方便快捷
+1405,positive,neutral,positive,True,A 未使用/只陈述事实、无明显不满（人工标正向）,还没有用，不过包装挺好的，不知道是不是正品，瓶子挺软的
+5703,negative,neutral,negative,True,B 夸产品但明确抱怨平台/价格（人工标负向）,商品还行但京东把我帐号弄成什么优惠券都不让领，这个1星是给京东的，
+3098,positive,neutral,positive,True,A 未使用/只陈述事实、无明显不满（人工标正向）,6月12日那天买的有送吹风机，而且吹风机数量有限的。为了得到吹风机买了第二次，反正2020年过期，能用完。
+8124,negative,neutral,negative,True,B 夸产品但明确抱怨平台/价格（人工标负向）,东西挺好，不过包装简陋，价格偏贵，实体店比京东便宜* 都怪自己腿懒了
+7279,negative,neutral,negative,True,B 夸产品但明确抱怨平台/价格（人工标负向）,东西不错 京东太垃圾
+1126,positive,neutral,positive,True,C 有小保留但整体接受（人工标正向）,好多好多，不过大部分怎么都是护发素呢，还是喜欢洗发水，以买要注意了。
+8122,negative,neutral,negative,True,B 夸产品但明确抱怨平台/价格（人工标负向）,还可以，和图片相符！！就是价格贵了！！！！
+3347,positive,neutral,positive,True,C 有小保留但整体接受（人工标正向）,味道和超市买的一样，就是比那个粘稠，用了再评价
+4650,positive,neutral,positive,True,A 未使用/只陈述事实、无明显不满（人工标正向）,洗头膏还有呢？一直在京东买，等家里的用了了在用
+1115,positive,neutral,positive,True,A 未使用/只陈述事实、无明显不满（人工标正向）,是一个套装盒子，看着不错，有待使用验证！
+4712,positive,negative,positive,True,D 标签可能有歧义/噪声,瓶子一点都不新，好多灰尘，拿起来手都是灰！勉强接受这产品！
+711,positive,neutral,positive,True,A 未使用/只陈述事实、无明显不满（人工标正向）,囤货，保质期要到2020年呢。
+3357,positive,neutral,positive,True,A 未使用/只陈述事实、无明显不满（人工标正向）,头一次买这个品牌的洗发水，着着挺不错的。等用后再来追评吧
+5738,negative,neutral,positive,False,D 标签可能有歧义/噪声,收到了。效果还可以吧。是真的吗？
+3750,positive,neutral,neutral,False,A 未使用/只陈述事实、无明显不满（人工标正向）,虽然是女士的，可是男女都可以用，没什么本质区别
