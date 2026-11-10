@@ -1,0 +1,75 @@
+{
+  "n": 300,
+  "accuracy": 0.9,
+  "macro_f1": 0.9414,
+  "neutral_rate": 0.09,
+  "json_failure_rate": 0.0,
+  "accuracy_on_non_neutral": 0.989,
+  "n_non_neutral": 273,
+  "per_class": {
+    "positive": {
+      "precision": 0.9921,
+      "recall": 0.84,
+      "f1": 0.9097,
+      "support": 150
+    },
+    "negative": {
+      "precision": 0.9863,
+      "recall": 0.96,
+      "f1": 0.973,
+      "support": 150
+    }
+  },
+  "confusion_matrix": {
+    "rows_true": [
+      "positive",
+      "negative"
+    ],
+    "cols_pred": [
+      "positive",
+      "neutral",
+      "negative",
+      "failed"
+    ],
+    "values": [
+      [
+        126,
+        22,
+        2,
+        0
+      ],
+      [
+        1,
+        5,
+        144,
+        0
+      ]
+    ]
+  },
+  "version": "v1",
+  "eval_set": "holdout",
+  "model": "deepseek-chat",
+  "time": "2026-11-10T20:24:19",
+  "batches": 15,
+  "reasked_batches": 3,
+  "reask_triggers": [
+    "id=210: List should have at most 2 items after validation, not 3",
+    "id=5001: List should have at most 2 items after validation, not 3",
+    "id=7459: List should have at most 2 items after validation, not 3",
+    "id=8784: List should have at most 2 items after validation, not 3",
+    "id=2785: List should have at most 2 items after validation, not 3",
+    "id=5395: List should have at most 2 items after validation, not 3",
+    "id=4079: List should have at most 2 items after validation, not 3"
+  ],
+  "final_errors": [],
+  "usage_run1": {
+    "api_calls": 18,
+    "cache_hits": 0,
+    "prompt_tokens": 18135,
+    "completion_tokens": 7519,
+    "estimated_cost": 0.0588,
+    "currency": "CNY",
+    "price_note": "input 2.0/M, output 3.0/M (CNY, cache-miss price, estimate only)"
+  },
+  "stability": null
+}

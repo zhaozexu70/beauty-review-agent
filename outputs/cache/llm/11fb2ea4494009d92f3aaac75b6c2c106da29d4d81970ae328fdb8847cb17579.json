@@ -1,0 +1,14 @@
+{
+ "prompt_version": "agent_v1",
+ "model": "deepseek-chat",
+ "content": "",
+ "tool_calls": [
+  {
+   "id": "call_00_h7pBayzrrp8ZpO10w8Ti5384",
+   "name": "search_kb",
+   "arguments": "{\"query\": \"洗发水漏液 破损 售后政策 退换货\"}"
+  }
+ ],
+ "prompt_tokens": 837,
+ "completion_tokens": 50
+}

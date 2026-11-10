@@ -1,0 +1,89 @@
+{
+  "n": 300,
+  "accuracy": 0.9033,
+  "macro_f1": 0.9466,
+  "neutral_rate": 0.0933,
+  "json_failure_rate": 0.0,
+  "accuracy_on_non_neutral": 0.9963,
+  "n_non_neutral": 272,
+  "per_class": {
+    "positive": {
+      "precision": 1.0,
+      "recall": 0.8467,
+      "f1": 0.917,
+      "support": 150
+    },
+    "negative": {
+      "precision": 0.9931,
+      "recall": 0.96,
+      "f1": 0.9763,
+      "support": 150
+    }
+  },
+  "confusion_matrix": {
+    "rows_true": [
+      "positive",
+      "negative"
+    ],
+    "cols_pred": [
+      "positive",
+      "neutral",
+      "negative",
+      "failed"
+    ],
+    "values": [
+      [
+        127,
+        22,
+        1,
+        0
+      ],
+      [
+        0,
+        6,
+        144,
+        0
+      ]
+    ]
+  },
+  "version": "v1",
+  "model": "deepseek-chat",
+  "time": "2026-11-10T20:21:14",
+  "batches": 15,
+  "reasked_batches": 2,
+  "usage_run1": {
+    "api_calls": 17,
+    "cache_hits": 0,
+    "prompt_tokens": 16479,
+    "completion_tokens": 7386,
+    "estimated_cost": 0.0551,
+    "currency": "CNY",
+    "price_note": "input 2.0/M, output 3.0/M (CNY, cache-miss price, estimate only)"
+  },
+  "stability": {
+    "n": 300,
+    "identical_sentiment_and_tags": 0.9567,
+    "identical_sentiment": 1.0,
+    "identical_tags": 0.9567
+  },
+  "usage_run2": {
+    "api_calls": 17,
+    "cache_hits": 0,
+    "prompt_tokens": 16066,
+    "completion_tokens": 7285,
+    "estimated_cost": 0.054,
+    "currency": "CNY",
+    "price_note": "input 2.0/M, output 3.0/M (CNY, cache-miss price, estimate only)"
+  },
+  "reask_triggers": [
+    "id=2948: List should have at most 2 items after validation, not 3",
+    "id=2170: List should have at most 2 items after validation, not 3",
+    "id=4676: List should have at most 2 items after validation, not 3",
+    "id=8780: List should have at most 2 items after validation, not 3",
+    "id=2154: List should have at most 2 items after validation, not 3",
+    "id=9117: List should have at most 2 items after validation, not 3"
+  ],
+  "final_errors": [],
+  "reask_triggers_note": "recovered by replaying run-1 responses from the on-disk cache (0 API calls)",
+  "eval_set": "eval"
+}

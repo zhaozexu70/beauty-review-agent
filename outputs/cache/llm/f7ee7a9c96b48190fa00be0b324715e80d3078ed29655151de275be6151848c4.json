@@ -1,0 +1,14 @@
+{
+ "prompt_version": "agent_v1",
+ "model": "deepseek-chat",
+ "content": "我会先加载示例评论，然后对它们进行分类和汇总。",
+ "tool_calls": [
+  {
+   "id": "call_00_w76fkIzXh20gVC8a7PTo2109",
+   "name": "load_reviews",
+   "arguments": "{\"source\": \"sample\"}"
+  }
+ ],
+ "prompt_tokens": 844,
+ "completion_tokens": 50
+}

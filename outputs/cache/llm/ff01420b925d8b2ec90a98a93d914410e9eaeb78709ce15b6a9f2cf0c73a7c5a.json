@@ -1,0 +1,8 @@
+{
+ "prompt_version": "classify_v2",
+ "model": "deepseek-chat",
+ "content": "{\"results\": [{\"id\": 5240, \"sentiment\": \"negative\", \"tags\": [\"价格\", \"真伪\"], \"reason\": \"降价且疑假货，头痒\"}]}",
+ "tool_calls": [],
+ "prompt_tokens": 1992,
+ "completion_tokens": 43
+}

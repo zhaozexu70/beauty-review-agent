@@ -1,0 +1,8 @@
+{
+ "prompt_version": "agent_v1",
+ "model": "deepseek-chat",
+ "content": "收到洗发水漏液，可以按以下方式处理：\n\n- **时效**：签收后 **48 小时内**联系客服，并提供外包装和商品破损处的照片；核实后可补发或退款。【来源：after_sales_policy.md】\n- **退换货**：未拆封且不影响二次销售的商品，签收后 7 天内可申请无理由退货；已拆封使用的洗护商品原则上不支持无理由退货，但存在质量问题的除外。漏液属于包装破损问题，可按上面的破损流程处理。【来源：after_sales_policy.md】\n\n建议尽快拍照留证并联系客服，避免超过 48 小时时限。",
+ "tool_calls": [],
+ "prompt_tokens": 1073,
+ "completion_tokens": 140
+}

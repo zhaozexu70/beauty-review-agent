@@ -1,0 +1,8 @@
+{
+ "prompt_version": "classify_v1",
+ "model": "deepseek-chat",
+ "content": "{\"results\": [{\"id\": 8780, \"sentiment\": \"negative\", \"tags\": [\"包装\", \"物流\"]}, {\"id\": 2154, \"sentiment\": \"positive\", \"tags\": [\"香味\", \"价格\"]}, {\"id\": 9117, \"sentiment\": \"negative\", \"tags\": [\"头皮刺激/过敏\", \"去屑\"]}]}",
+ "tool_calls": [],
+ "prompt_tokens": 1578,
+ "completion_tokens": 81
+}

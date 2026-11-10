@@ -1,0 +1,14 @@
+{
+ "prompt_version": "agent_v1",
+ "model": "deepseek-chat",
+ "content": "",
+ "tool_calls": [
+  {
+   "id": "call_00_xVWagxa1IZHGzKvDsgpo9919",
+   "name": "search_kb",
+   "arguments": "{\"query\": \"含硅油洗发水的优缺点\"}"
+  }
+ ],
+ "prompt_tokens": 837,
+ "completion_tokens": 43
+}

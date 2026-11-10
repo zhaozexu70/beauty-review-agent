@@ -24,7 +24,7 @@ from sklearn.metrics import f1_score, precision_recall_fscore_support
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from src.classifier import classify_reviews  # noqa: E402
-from src.config import EVAL_CSV, EVAL_RESULTS_DIR, get_settings, has_api_key  # noqa: E402
+from src.config import EVAL_CSV, EVAL_RESULTS_DIR, HOLDOUT_CSV, get_settings, has_api_key  # noqa: E402
 from src.llm_client import LLMClient, log_usage  # noqa: E402
 from src.prompts import PROMPTS  # noqa: E402
 
@@ -79,9 +79,9 @@ def stability(p1: pd.DataFrame, p2: pd.DataFrame) -> dict:
             "identical_tags": round(float(tags_same.mean()), 4)}
 
 
-def write_comparison() -> None:
+def write_comparison(base: Path = EVAL_RESULTS_DIR) -> None:
     rows = []
-    for d in sorted(EVAL_RESULTS_DIR.glob("*/metrics.json")):
+    for d in sorted(base.glob("v*/metrics.json")):
         m = json.loads(d.read_text(encoding="utf-8"))
         st = m.get("stability") or {}
         rows.append({"version": m["version"], "accuracy": m["accuracy"], "macro_f1": m["macro_f1"],
@@ -91,8 +91,8 @@ def write_comparison() -> None:
                      "api_cost": m["usage_run1"]["estimated_cost"]})
     if rows:
         df = pd.DataFrame(rows)
-        df.to_csv(EVAL_RESULTS_DIR / "comparison.csv", index=False, encoding="utf-8-sig")
-        print("\n=== comparison ===\n" + df.to_string(index=False))
+        df.to_csv(base / "comparison.csv", index=False, encoding="utf-8-sig")
+        print(f"\n=== comparison ({base.name}) ===\n" + df.to_string(index=False))
 
 
 def main() -> None:
@@ -100,14 +100,18 @@ def main() -> None:
     ap.add_argument("--version", required=True, choices=sorted(PROMPTS))
     ap.add_argument("--stability", action="store_true",
                     help="run twice with cache disabled and measure agreement")
+    ap.add_argument("--set", default="eval", choices=["eval", "holdout"],
+                    help="eval = main 300-review set; holdout = disjoint set never inspected "
+                         "while writing prompts (generalisation check)")
     args = ap.parse_args()
     if not has_api_key():
         sys.exit("LLM_API_KEY is not set in .env")
 
     s = get_settings()
-    ev = pd.read_csv(EVAL_CSV, encoding="utf-8-sig")
+    ev = pd.read_csv(EVAL_CSV if args.set == "eval" else HOLDOUT_CSV, encoding="utf-8-sig")
     items = [(int(r.review_id), str(r.review)) for r in ev.itertuples()]
-    out = EVAL_RESULTS_DIR / args.version
+    base = EVAL_RESULTS_DIR if args.set == "eval" else EVAL_RESULTS_DIR / "holdout"
+    out = base / args.version
     out.mkdir(parents=True, exist_ok=True)
 
     # run 1: if --stability, bypass cache reads (fresh API call) but refresh the cache,
@@ -116,11 +120,12 @@ def main() -> None:
     labels1, st1 = classify_reviews(c1, items, args.version)
     p1 = predictions_frame(ev, labels1)
     metrics, cm = compute_metrics(p1)
-    metrics.update({"version": args.version, "model": s.model,
+    metrics.update({"version": args.version, "eval_set": args.set, "model": s.model,
                     "time": datetime.now().isoformat(timespec="seconds"),
                     "batches": st1.batches, "reasked_batches": st1.reasks,
+                    "reask_triggers": st1.first_errors, "final_errors": st1.errors,
                     "usage_run1": c1.usage.summary(s), "stability": None})
-    log_usage("evaluate.py", {"version": args.version, "run": 1}, c1.usage.summary(s))
+    log_usage("evaluate.py", {"version": args.version, "set": args.set, "run": 1}, c1.usage.summary(s))
 
     if args.stability:
         c2 = LLMClient(s, read_cache=False, write_cache=False)
@@ -129,7 +134,7 @@ def main() -> None:
         p2.to_csv(out / "predictions_run2.csv", index=False, encoding="utf-8-sig")
         metrics["stability"] = stability(p1, p2)
         metrics["usage_run2"] = c2.usage.summary(s)
-        log_usage("evaluate.py", {"version": args.version, "run": 2}, c2.usage.summary(s))
+        log_usage("evaluate.py", {"version": args.version, "set": args.set, "run": 2}, c2.usage.summary(s))
 
     p1.to_csv(out / "predictions.csv", index=False, encoding="utf-8-sig")
     p1[~p1["correct"]].to_csv(out / "badcases.csv", index=False, encoding="utf-8-sig")
@@ -137,7 +142,7 @@ def main() -> None:
     (out / "metrics.json").write_text(json.dumps(metrics, ensure_ascii=False, indent=2),
                                       encoding="utf-8")
 
-    print(f"=== {args.version} ({s.model}) ===")
+    print(f"=== {args.version} on {args.set} set ({s.model}) ===")
     for k in ["accuracy", "macro_f1", "neutral_rate", "json_failure_rate", "accuracy_on_non_neutral"]:
         print(f"{k:>26}: {metrics[k]}")
     print("confusion matrix (rows=gold, cols=pred):\n" + cm.to_string())
@@ -146,7 +151,7 @@ def main() -> None:
     print("usage run1:", metrics["usage_run1"])
     if "usage_run2" in metrics:
         print("usage run2:", metrics["usage_run2"])
-    write_comparison()
+    write_comparison(base)
 
 
 if __name__ == "__main__":

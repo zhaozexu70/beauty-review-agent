@@ -1,0 +1,8 @@
+{
+ "prompt_version": "classify_v1",
+ "model": "deepseek-chat",
+ "content": "{\n  \"results\": [\n    {\"id\": 2948, \"sentiment\": \"positive\", \"tags\": [\"价格\", \"真伪\"]},\n    {\"id\": 2170, \"sentiment\": \"positive\", \"tags\": [\"洗后发质\", \"香味\"]},\n    {\"id\": 4676, \"sentiment\": \"positive\", \"tags\": [\"真伪\", \"香味\"]}\n  ]\n}",
+ "tool_calls": [],
+ "prompt_tokens": 1827,
+ "completion_tokens": 89
+}

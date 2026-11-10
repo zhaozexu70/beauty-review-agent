@@ -1,0 +1,8 @@
+{
+ "prompt_version": "classify_v1",
+ "model": "deepseek-chat",
+ "content": "{\n  \"results\": [\n    {\"id\": 576, \"sentiment\": \"neutral\", \"tags\": [\"其他\"]},\n    {\"id\": 2208, \"sentiment\": \"positive\", \"tags\": [\"物流\", \"其他\"]},\n    {\"id\": 5652, \"sentiment\": \"negative\", \"tags\": [\"洗后发质\", \"质地\"]},\n    {\"id\": 2047, \"sentiment\": \"neutral\", \"tags\": [\"其他\"]},\n    {\"id\": 5395, \"sentiment\": \"negative\", \"tags\": [\"真伪\", \"头皮刺激/过敏\", \"价格\"]},\n    {\"id\": 8278, \"sentiment\": \"negative\", \"tags\": [\"真伪\"]},\n    {\"id\": 3792, \"sentiment\": \"positive\", \"tags\": [\"其他\"]},\n    {\"id\": 3943, \"sentiment\": \"positive\", \"tags\": [\"包装\"]},\n    {\"id\": 4218, \"sentiment\": \"positive\", \"tags\": [\"物流\", \"价格\"]},\n    {\"id\": 4079, \"sentiment\": \"positive\", \"tags\": [\"价格\", \"包装\", \"真伪\"]},\n    {\"id\": 5362, \"sentiment\": \"negative\", \"tags\": [\"头皮刺激/过敏\", \"真伪\"]},\n    {\"id\": 3422, \"sentiment\": \"positive\", \"tags\": [\"物流\", \"真伪\"]},\n    {\"id\": 7560, \"sentiment\": \"negative\", \"tags\": [\"其他\"]},\n    {\"id\": 7259, \"sentiment\": \"negative\", \"tags\": [\"物流\", \"客服\"]},\n    {\"id\": 9524, \"sentiment\": \"negative\", \"tags\": [\"真伪\", \"洗后发质\"]},\n    {\"id\": 9664, \"sentiment\": \"negative\", \"tags\": [\"真伪\", \"香味\"]},\n    {\"id\": 9192, \"sentiment\": \"negative\", \"tags\": [\"去屑\"]},\n    {\"id\": 2836, \"sentiment\": \"positive\", \"tags\": [\"价格\", \"客服\"]},\n    {\"id\": 5295, \"sentiment\": \"negative\", \"tags\": [\"其他\"]},\n    {\"id\": 3521, \"sentiment\": \"positive\", \"tags\": [\"物流\"]}\n  ]\n}",
+ "tool_calls": [],
+ "prompt_tokens": 812,
+ "completion_tokens": 507
+}

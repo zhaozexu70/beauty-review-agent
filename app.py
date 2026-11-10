@@ -48,9 +48,6 @@ else:
     st.sidebar.success(f"在线模式：{get_settings().model}")
 page = st.sidebar.radio("页面", ["评论分析", "问答助手", "评测结果"])
 version = st.sidebar.selectbox("分类 prompt 版本", sorted(PROMPTS), index=sorted(PROMPTS).index(LATEST_PROMPT))
-u = get_client().usage
-st.sidebar.caption(f"本次会话：API 调用 {u.calls} 次，缓存命中 {u.cache_hits} 次，"
-                   f"估算花费 {u.cost(get_settings()):.4f} {get_settings().currency}")
 
 
 # ---------------------------------------------------------- page 1 --------
@@ -104,7 +101,7 @@ def page_analysis() -> None:
         x=alt.X("情感:N", sort=list(SENT_COLORS), title=None),
         y=alt.Y("数量:Q", title="评论数"),
         color=alt.Color("情感:N", scale=sentiment_color_scale(), legend=None),
-        tooltip=["情感", "数量"]).properties(height=300), use_container_width=True)
+        tooltip=["情感", "数量"]).properties(height=300), width="stretch")
 
     rows = [{"标签": t, "情感": SENT_ZH[s], "数量": n}
             for t, d in stats["tag_by_sentiment"].items() for s, n in d.items() if n]
@@ -118,7 +115,7 @@ def page_analysis() -> None:
             x=alt.X("数量:Q", title="提及次数（一条评论最多 2 个标签）"),
             color=alt.Color("情感:N", scale=sentiment_color_scale(), legend=alt.Legend(orient="top")),
             order=alt.Order("情感:N"),
-            tooltip=["标签", "情感", "数量"]).properties(height=340), use_container_width=True)
+            tooltip=["标签", "情感", "数量"]).properties(height=340), width="stretch")
 
     st.subheader("负向评论 Top 问题与原话")
     for x in stats["negative_tags"][:5]:
@@ -129,7 +126,7 @@ def page_analysis() -> None:
     st.subheader("逐条结果")
     show = df.assign(情感=df["sentiment"].map(SENT_ZH), 标签=df["tags"].map("、".join))
     cols = ["review_id", "review", "情感", "标签"] + (["label"] if "label" in show and show["label"].notna().any() else [])
-    st.dataframe(show[cols], use_container_width=True, height=300)
+    st.dataframe(show[cols], width="stretch", height=300)
 
     st.subheader("改进报告")
     st.download_button("下载报告（Markdown）", tb.report_md, file_name=f"report_{tb.source}_{tb.prompt_version}.md")
@@ -164,7 +161,7 @@ def page_chat() -> None:
     cols = st.columns(len(PRESET_QUESTIONS))
     clicked = None
     for c, q in zip(cols, PRESET_QUESTIONS):
-        if c.button(q, use_container_width=True):
+        if c.button(q, width="stretch"):
             clicked = q
     typed = st.chat_input("问点什么，例如：差评主要集中在哪？硅油有什么作用？")
     question = clicked or typed
@@ -202,7 +199,16 @@ def page_eval() -> None:
                                 "neutral_rate": "中性率", "json_failure_rate": "JSON失败率",
                                 "accuracy_on_non_neutral": "非中性样本准确率",
                                 "stability_identical": "稳定性(两次完全一致)", "api_cost": "单次评测花费"})
-    st.dataframe(pretty, use_container_width=True, hide_index=True)
+    st.dataframe(pretty, width="stretch", hide_index=True)
+    ho = EVAL_RESULTS_DIR / "holdout" / "comparison.csv"
+    if ho.exists():
+        st.markdown("**泛化检查（holdout 集）**：另外 300 条、与评测集不重叠、写 prompt 时从未查看过的评论。"
+                    "v2 是看着评测集 badcase 写的，所以 holdout 上的提升才是更可信的数字。")
+        hd = pd.read_csv(ho, encoding="utf-8-sig").drop(columns=["stability_identical"])
+        st.dataframe(hd.rename(columns={"version": "版本", "accuracy": "准确率", "macro_f1": "Macro-F1",
+                                        "neutral_rate": "中性率", "json_failure_rate": "JSON失败率",
+                                        "accuracy_on_non_neutral": "非中性样本准确率", "api_cost": "单次评测花费"}),
+                     width="stretch", hide_index=True)
 
     versions = df["version"].tolist()
     cols = st.columns(len(versions))
@@ -220,7 +226,7 @@ def page_eval() -> None:
         text = base.mark_text(fontSize=16).encode(
             text="数量:Q", color=alt.condition(alt.datum["数量"] > 80, alt.value("white"), alt.value("#0b0b0b")))
         c.subheader(f"{v} 混淆矩阵")
-        c.altair_chart((heat + text).properties(height=200), use_container_width=True)
+        c.altair_chart((heat + text).properties(height=200), width="stretch")
         if m.get("stability"):
             s = m["stability"]
             c.caption(f"稳定性（关缓存跑两次）：情感+标签完全一致 {s['identical_sentiment_and_tags']:.1%}；"
@@ -230,7 +236,7 @@ def page_eval() -> None:
     v = st.selectbox("版本", versions, index=len(versions) - 1)
     bc = pd.read_csv(EVAL_RESULTS_DIR / v / "badcases.csv", encoding="utf-8-sig")
     st.dataframe(bc[["review_id", "gold", "pred", "tags", "reason", "review"]],
-                 use_container_width=True, hide_index=True)
+                 width="stretch", hide_index=True)
     doc = ROOT / "docs" / "prompt_iteration.md"
     if doc.exists():
         with st.expander("Prompt 迭代记录（docs/prompt_iteration.md）"):
@@ -238,3 +244,7 @@ def page_eval() -> None:
 
 
 {"评论分析": page_analysis, "问答助手": page_chat, "评测结果": page_eval}[page]()
+
+u = get_client().usage  # shown after the page ran, so it includes this run's calls
+st.sidebar.caption(f"本进程累计：API 调用 {u.calls} 次，缓存命中 {u.cache_hits} 次，"
+                   f"估算花费 {u.cost(get_settings()):.4f} {get_settings().currency}")

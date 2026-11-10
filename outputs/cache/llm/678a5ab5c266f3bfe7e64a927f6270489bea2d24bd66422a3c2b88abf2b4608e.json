@@ -1,0 +1,14 @@
+{
+ "prompt_version": "agent_v1",
+ "model": "deepseek-chat",
+ "content": "",
+ "tool_calls": [
+  {
+   "id": "call_00_MAM80WQKRZ4OAJEWpS7B6409",
+   "name": "search_kb",
+   "arguments": "{\"query\": \"洗发水 脱发 防脱 功效\"}"
+  }
+ ],
+ "prompt_tokens": 838,
+ "completion_tokens": 47
+}

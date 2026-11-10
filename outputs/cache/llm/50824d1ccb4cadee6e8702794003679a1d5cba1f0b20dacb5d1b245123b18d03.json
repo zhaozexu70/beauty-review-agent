@@ -1,0 +1,8 @@
+{
+ "prompt_version": "classify_v1",
+ "model": "deepseek-chat",
+ "content": "{\n  \"results\": [\n    {\"id\": 8349, \"sentiment\": \"negative\", \"tags\": [\"包装\", \"真伪\"]},\n    {\"id\": 7626, \"sentiment\": \"negative\", \"tags\": [\"物流\"]},\n    {\"id\": 3167, \"sentiment\": \"positive\", \"tags\": [\"包装\", \"物流\"]},\n    {\"id\": 776, \"sentiment\": \"positive\", \"tags\": [\"价格\"]},\n    {\"id\": 3438, \"sentiment\": \"neutral\", \"tags\": [\"价格\", \"其他\"]},\n    {\"id\": 1362, \"sentiment\": \"positive\", \"tags\": [\"物流\", \"价格\"]},\n    {\"id\": 2997, \"sentiment\": \"positive\", \"tags\": [\"其他\"]},\n    {\"id\": 4839, \"sentiment\": \"positive\", \"tags\": [\"价格\", \"其他\"]},\n    {\"id\": 2948, \"sentiment\": \"positive\", \"tags\": [\"价格\", \"真伪\", \"物流\"]},\n    {\"id\": 2170, \"sentiment\": \"positive\", \"tags\": [\"洗后发质\", \"香味\", \"物流\"]},\n    {\"id\": 5489, \"sentiment\": \"negative\", \"tags\": [\"其他\"]},\n    {\"id\": 1538, \"sentiment\": \"positive\", \"tags\": [\"价格\"]},\n    {\"id\": 84, \"sentiment\": \"positive\", \"tags\": [\"真伪\", \"物流\"]},\n    {\"id\": 5553, \"sentiment\": \"negative\", \"tags\": [\"其他\"]},\n    {\"id\": 1746, \"sentiment\": \"positive\", \"tags\": [\"其他\", \"客服\"]},\n    {\"id\": 2405, \"sentiment\": \"positive\", \"tags\": [\"包装\", \"价格\"]},\n    {\"id\": 5021, \"sentiment\": \"negative\", \"tags\": [\"真伪\", \"包装\"]},\n    {\"id\": 144, \"sentiment\": \"positive\", \"tags\": [\"物流\"]},\n    {\"id\": 5768, \"sentiment\": \"negative\", \"tags\": [\"真伪\", \"其他\"]},\n    {\"id\": 4676, \"sentiment\": \"positive\", \"tags\": [\"真伪\", \"香味\", \"其他\"]}\n  ]\n}",
+ "tool_calls": [],
+ "prompt_tokens": 1044,
+ "completion_tokens": 503
+}

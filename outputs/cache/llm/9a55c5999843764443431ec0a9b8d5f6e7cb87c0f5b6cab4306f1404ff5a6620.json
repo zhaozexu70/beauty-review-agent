@@ -1,0 +1,8 @@
+{
+ "prompt_version": "classify_v1",
+ "model": "deepseek-chat",
+ "content": "{\"results\": [{\"id\": 5395, \"sentiment\": \"negative\", \"tags\": [\"真伪\", \"头皮刺激/过敏\"]}, {\"id\": 4079, \"sentiment\": \"positive\", \"tags\": [\"价格\", \"包装\"]}]}",
+ "tool_calls": [],
+ "prompt_tokens": 1463,
+ "completion_tokens": 57
+}

@@ -1,0 +1,8 @@
+{
+ "prompt_version": "classify_v1",
+ "model": "deepseek-chat",
+ "content": "{\n  \"results\": [\n    {\"id\": 5001, \"sentiment\": \"negative\", \"tags\": [\"真伪\", \"起泡\"]},\n    {\"id\": 7459, \"sentiment\": \"negative\", \"tags\": [\"真伪\", \"头皮刺激/过敏\"]},\n    {\"id\": 8784, \"sentiment\": \"negative\", \"tags\": [\"包装\", \"洗后发质\"]},\n    {\"id\": 2785, \"sentiment\": \"positive\", \"tags\": [\"价格\", \"物流\"]}\n  ]\n}",
+ "tool_calls": [],
+ "prompt_tokens": 1901,
+ "completion_tokens": 118
+}

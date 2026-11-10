@@ -1,0 +1,14 @@
+{
+ "prompt_version": "agent_v1",
+ "model": "deepseek-chat",
+ "content": "",
+ "tool_calls": [
+  {
+   "id": "call_00_26sDdKHEjQfPNwUzhIrs8940",
+   "name": "classify_reviews",
+   "arguments": "{}"
+  }
+ ],
+ "prompt_tokens": 1039,
+ "completion_tokens": 23
+}

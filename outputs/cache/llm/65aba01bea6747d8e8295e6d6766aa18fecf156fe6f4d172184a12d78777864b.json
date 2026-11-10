@@ -1,0 +1,8 @@
+{
+ "prompt_version": "classify_v1",
+ "model": "deepseek-chat",
+ "content": "{\"type\": \"json_object\", \"results\": [{\"id\": 5870, \"sentiment\": \"negative\", \"tags\": [\"价格\"]}, {\"id\": 6813, \"sentiment\": \"negative\", \"tags\": [\"物流\", \"客服\"]}, {\"id\": 2928, \"sentiment\": \"positive\", \"tags\": [\"价格\"]}, {\"id\": 3612, \"sentiment\": \"positive\", \"tags\": [\"包装\", \"香味\"]}, {\"id\": 36, \"sentiment\": \"positive\", \"tags\": [\"其他\"]}, {\"id\": 85, \"sentiment\": \"positive\", \"tags\": [\"其他\"]}, {\"id\": 682, \"sentiment\": \"positive\", \"tags\": [\"价格\"]}, {\"id\": 4200, \"sentiment\": \"neutral\", \"tags\": [\"其他\"]}, {\"id\": 492, \"sentiment\": \"positive\", \"tags\": [\"其他\"]}, {\"id\": 1545, \"sentiment\": \"positive\", \"tags\": [\"价格\"]}, {\"id\": 5017, \"sentiment\": \"negative\", \"tags\": [\"头皮刺激/过敏\", \"真伪\"]}, {\"id\": 1229, \"sentiment\": \"positive\", \"tags\": [\"价格\"]}, {\"id\": 2229, \"sentiment\": \"positive\", \"tags\": [\"物流\"]}, {\"id\": 8935, \"sentiment\": \"negative\", \"tags\": [\"包装\"]}, {\"id\": 3953, \"sentiment\": \"neutral\", \"tags\": [\"其他\"]}, {\"id\": 1687, \"sentiment\": \"positive\", \"tags\": [\"香味\", \"物流\"]}, {\"id\": 9210, \"sentiment\": \"negative\", \"tags\": [\"其他\"]}, {\"id\": 1246, \"sentiment\": \"positive\", \"tags\": [\"价格\", \"物流\"]}, {\"id\": 8604, \"sentiment\": \"negative\", \"tags\": [\"真伪\", \"质地\"]}, {\"id\": 1320, \"sentiment\": \"neutral\", \"tags\": [\"价格\", \"起泡\"]}]}",
+ "tool_calls": [],
+ "prompt_tokens": 808,
+ "completion_tokens": 455
+}

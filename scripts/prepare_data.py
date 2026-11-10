@@ -8,7 +8,8 @@ Steps (each step's row count is recorded in outputs/data_quality.csv):
   5. drop exact duplicate reviews (keep first)
   6. drop near-duplicates (same text ignoring whitespace/punctuation)
 Then build a fixed eval set: 150 positive + 150 negative, random_state=42,
-and a 50-review tag labeling sheet drawn from the eval set.
+a disjoint 300-review holdout set (150/150) that is never inspected while
+writing prompts, and a 50-review tag labeling sheet drawn from the eval set.
 
 Usage (Windows):  .venv\\Scripts\\python scripts\\prepare_data.py
 """
@@ -23,7 +24,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from src.config import (  # noqa: E402
-    CLEAN_CSV, EVAL_CSV, OUTPUTS_DIR, PROCESSED_DIR, RAW_DIR, RAW_URL, RAW_ZIP,
+    CLEAN_CSV, EVAL_CSV, HOLDOUT_CSV, OUTPUTS_DIR, PROCESSED_DIR, RAW_DIR, RAW_URL, RAW_ZIP,
     TAG_SHEET_CSV, TAXONOMY,
 )
 
@@ -85,6 +86,16 @@ def build_eval(df: pd.DataFrame) -> pd.DataFrame:
     return ev[["review_id", "label", "review"]].reset_index(drop=True)
 
 
+def build_holdout(df: pd.DataFrame, ev: pd.DataFrame) -> pd.DataFrame:
+    """A second 150/150 set, disjoint from the eval set and NEVER inspected when
+    writing prompts. Used only to check that prompt changes generalise."""
+    rest = df[~df["review_id"].isin(ev["review_id"])]
+    pos = rest[rest.label == 1].sample(n=150, random_state=SEED)
+    neg = rest[rest.label == 0].sample(n=150, random_state=SEED)
+    ho = pd.concat([pos, neg]).sample(frac=1, random_state=SEED)
+    return ho[["review_id", "label", "review"]].reset_index(drop=True)
+
+
 def build_tag_sheet(ev: pd.DataFrame) -> pd.DataFrame:
     sheet = ev.sample(n=50, random_state=SEED)[["review_id", "review"]].copy()
     sheet["human_tag_1"] = ""
@@ -102,6 +113,7 @@ def main() -> None:
     EVAL_CSV.parent.mkdir(parents=True, exist_ok=True)
     ev = build_eval(df)
     ev.to_csv(EVAL_CSV, index=False, encoding="utf-8-sig")
+    build_holdout(df, ev).to_csv(HOLDOUT_CSV, index=False, encoding="utf-8-sig")
 
     if TAG_SHEET_CSV.exists():
         print(f"[skip] {TAG_SHEET_CSV} already exists (won't overwrite your labels)")

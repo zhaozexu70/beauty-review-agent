@@ -1,0 +1,8 @@
+{
+ "prompt_version": "classify_v1",
+ "model": "deepseek-chat",
+ "content": "{\"type\": \"json_object\", \"results\": [{\"id\": 210, \"sentiment\": \"negative\", \"tags\": [\"客服\", \"价格\"]}]}",
+ "tool_calls": [],
+ "prompt_tokens": 1416,
+ "completion_tokens": 35
+}

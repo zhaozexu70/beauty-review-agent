@@ -1,0 +1,14 @@
+{
+ "prompt_version": "agent_v1",
+ "model": "deepseek-chat",
+ "content": "",
+ "tool_calls": [
+  {
+   "id": "call_00_63GQyS09UPZZ7savXNX26703",
+   "name": "write_report",
+   "arguments": "{}"
+  }
+ ],
+ "prompt_tokens": 1782,
+ "completion_tokens": 21
+}

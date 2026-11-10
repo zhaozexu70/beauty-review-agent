@@ -1,0 +1,67 @@
+{
+  "n": 300,
+  "accuracy": 0.9567,
+  "macro_f1": 0.9663,
+  "neutral_rate": 0.02,
+  "json_failure_rate": 0.0,
+  "accuracy_on_non_neutral": 0.9762,
+  "n_non_neutral": 294,
+  "per_class": {
+    "positive": {
+      "precision": 0.986,
+      "recall": 0.94,
+      "f1": 0.9625,
+      "support": 150
+    },
+    "negative": {
+      "precision": 0.9669,
+      "recall": 0.9733,
+      "f1": 0.9701,
+      "support": 150
+    }
+  },
+  "confusion_matrix": {
+    "rows_true": [
+      "positive",
+      "negative"
+    ],
+    "cols_pred": [
+      "positive",
+      "neutral",
+      "negative",
+      "failed"
+    ],
+    "values": [
+      [
+        141,
+        4,
+        5,
+        0
+      ],
+      [
+        2,
+        2,
+        146,
+        0
+      ]
+    ]
+  },
+  "version": "v2",
+  "eval_set": "holdout",
+  "model": "deepseek-chat",
+  "time": "2026-11-10T20:24:39",
+  "batches": 15,
+  "reasked_batches": 0,
+  "reask_triggers": [],
+  "final_errors": [],
+  "usage_run1": {
+    "api_calls": 15,
+    "cache_hits": 0,
+    "prompt_tokens": 18725,
+    "completion_tokens": 10228,
+    "estimated_cost": 0.0681,
+    "currency": "CNY",
+    "price_note": "input 2.0/M, output 3.0/M (CNY, cache-miss price, estimate only)"
+  },
+  "stability": null
+}

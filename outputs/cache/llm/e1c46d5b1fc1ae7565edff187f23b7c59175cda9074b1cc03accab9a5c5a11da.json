@@ -1,0 +1,8 @@
+{
+ "prompt_version": "classify_v2",
+ "model": "deepseek-chat",
+ "content": "{\"results\": [{\"id\": 2948, \"sentiment\": \"positive\", \"tags\": [\"价格\", \"真伪\"], \"reason\": \"便宜正品，快递快\"}, {\"id\": 2170, \"sentiment\": \"positive\", \"tags\": [\"洗后发质\", \"香味\"], \"reason\": \"顺滑好闻，快递给力\"}]}",
+ "tool_calls": [],
+ "prompt_tokens": 2384,
+ "completion_tokens": 80
+}

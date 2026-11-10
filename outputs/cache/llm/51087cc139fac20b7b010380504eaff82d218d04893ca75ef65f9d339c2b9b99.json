@@ -1,0 +1,8 @@
+{
+ "prompt_version": "agent_v1",
+ "model": "deepseek-chat",
+ "content": "知识库中没有相关信息，无法确认这款洗发水对脱发的作用。\n\n另外需要说明：洗发水属于清洁类化妆品，我不能提供医疗诊断或治疗建议。如果脱发情况明显或持续，建议停用可疑产品并咨询皮肤科医生。",
+ "tool_calls": [],
+ "prompt_tokens": 940,
+ "completion_tokens": 53
+}

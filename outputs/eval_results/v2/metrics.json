@@ -1,0 +1,85 @@
+{
+  "n": 300,
+  "accuracy": 0.98,
+  "macro_f1": 0.9832,
+  "neutral_rate": 0.0067,
+  "json_failure_rate": 0.0,
+  "accuracy_on_non_neutral": 0.9866,
+  "n_non_neutral": 298,
+  "per_class": {
+    "positive": {
+      "precision": 0.9932,
+      "recall": 0.9667,
+      "f1": 0.9797,
+      "support": 150
+    },
+    "negative": {
+      "precision": 0.9803,
+      "recall": 0.9933,
+      "f1": 0.9868,
+      "support": 150
+    }
+  },
+  "confusion_matrix": {
+    "rows_true": [
+      "positive",
+      "negative"
+    ],
+    "cols_pred": [
+      "positive",
+      "neutral",
+      "negative",
+      "failed"
+    ],
+    "values": [
+      [
+        145,
+        2,
+        3,
+        0
+      ],
+      [
+        1,
+        0,
+        149,
+        0
+      ]
+    ]
+  },
+  "version": "v2",
+  "eval_set": "eval",
+  "model": "deepseek-chat",
+  "time": "2026-11-10T20:23:36",
+  "batches": 15,
+  "reasked_batches": 2,
+  "reask_triggers": [
+    "id=2948: List should have at most 2 items after validation, not 3",
+    "id=2170: List should have at most 2 items after validation, not 3",
+    "id=5240: List should have at most 2 items after validation, not 3"
+  ],
+  "final_errors": [],
+  "usage_run1": {
+    "api_calls": 17,
+    "cache_hits": 0,
+    "prompt_tokens": 22820,
+    "completion_tokens": 10666,
+    "estimated_cost": 0.0776,
+    "currency": "CNY",
+    "price_note": "input 2.0/M, output 3.0/M (CNY, cache-miss price, estimate only)"
+  },
+  "stability": {
+    "n": 300,
+    "identical_sentiment_and_tags": 0.9467,
+    "identical_sentiment": 0.9967,
+    "identical_tags": 0.95
+  },
+  "usage_run2": {
+    "api_calls": 15,
+    "cache_hits": 0,
+    "prompt_tokens": 18444,
+    "completion_tokens": 10379,
+    "estimated_cost": 0.068,
+    "currency": "CNY",
+    "price_note": "input 2.0/M, output 3.0/M (CNY, cache-miss price, estimate only)"
+  }
+}

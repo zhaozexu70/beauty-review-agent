@@ -27,6 +27,7 @@ RAW_URL = (
 )
 CLEAN_CSV = PROCESSED_DIR / "shampoo_clean.csv"
 EVAL_CSV = EVAL_DIR / "eval_set.csv"
+HOLDOUT_CSV = EVAL_DIR / "holdout_set.csv"
 TAG_SHEET_CSV = EVAL_DIR / "tag_labeling_sheet.csv"
 
 # FIXED issue-tag taxonomy. The model may only use these values.

@@ -1,0 +1,8 @@
+{
+ "prompt_version": "classify_v1",
+ "model": "deepseek-chat",
+ "content": "{\"type\": \"json_object\", \"results\": [{\"id\": 3956, \"sentiment\": \"positive\", \"tags\": [\"包装\", \"物流\"]}, {\"id\": 8, \"sentiment\": \"positive\", \"tags\": [\"香味\", \"其他\"]}, {\"id\": 8699, \"sentiment\": \"negative\", \"tags\": [\"真伪\"]}, {\"id\": 1436, \"sentiment\": \"positive\", \"tags\": [\"香味\"]}, {\"id\": 6805, \"sentiment\": \"negative\", \"tags\": [\"其他\"]}, {\"id\": 6192, \"sentiment\": \"negative\", \"tags\": [\"真伪\", \"控油\"]}, {\"id\": 2484, \"sentiment\": \"positive\", \"tags\": [\"洗后发质\"]}, {\"id\": 561, \"sentiment\": \"positive\", \"tags\": [\"物流\", \"价格\"]}, {\"id\": 29, \"sentiment\": \"positive\", \"tags\": [\"价格\", \"物流\"]}, {\"id\": 4877, \"sentiment\": \"positive\", \"tags\": [\"物流\", \"其他\"]}, {\"id\": 5873, \"sentiment\": \"negative\", \"tags\": [\"物流\", \"包装\"]}, {\"id\": 2018, \"sentiment\": \"positive\", \"tags\": [\"物流\"]}, {\"id\": 8343, \"sentiment\": \"negative\", \"tags\": [\"洗后发质\", \"真伪\"]}, {\"id\": 6667, \"sentiment\": \"negative\", \"tags\": [\"价格\"]}, {\"id\": 9026, \"sentiment\": \"negative\", \"tags\": [\"去屑\", \"价格\"]}, {\"id\": 8745, \"sentiment\": \"negative\", \"tags\": [\"真伪\"]}, {\"id\": 9831, \"sentiment\": \"negative\", \"tags\": [\"物流\", \"客服\"]}, {\"id\": 4850, \"sentiment\": \"positive\", \"tags\": [\"物流\"]}, {\"id\": 9567, \"sentiment\": \"negative\", \"tags\": [\"物流\", \"价格\"]}, {\"id\": 2031, \"sentiment\": \"positive\", \"tags\": [\"去屑\", \"洗后发质\"]}]}",
+ "tool_calls": [],
+ "prompt_tokens": 861,
+ "completion_tokens": 481
+}

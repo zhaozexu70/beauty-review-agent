@@ -1,0 +1,14 @@
+{
+ "prompt_version": "agent_v1",
+ "model": "deepseek-chat",
+ "content": "我会先加载示例评论，对它们进行分类，然后生成报告。",
+ "tool_calls": [
+  {
+   "id": "call_00_g7FKnHVVeowxLNDcdU9z4842",
+   "name": "load_reviews",
+   "arguments": "{\"source\": \"sample\"}"
+  }
+ ],
+ "prompt_tokens": 840,
+ "completion_tokens": 51
+}

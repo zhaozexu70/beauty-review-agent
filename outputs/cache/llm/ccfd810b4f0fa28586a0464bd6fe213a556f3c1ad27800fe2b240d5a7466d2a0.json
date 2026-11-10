@@ -1,0 +1,14 @@
+{
+ "prompt_version": "agent_v1",
+ "model": "deepseek-chat",
+ "content": "",
+ "tool_calls": [
+  {
+   "id": "call_00_CoBrGhE9YXy2NIb1KHeI1053",
+   "name": "aggregate_stats",
+   "arguments": "{}"
+  }
+ ],
+ "prompt_tokens": 1130,
+ "completion_tokens": 22
+}
