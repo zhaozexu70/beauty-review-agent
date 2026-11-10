@@ -1,0 +1,21 @@
+# secrets
+.env
+
+# raw / derived full data (download via scripts/prepare_data.py)
+data/raw/
+data/processed/
+
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# editor / OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# throwaway outputs
+outputs/tmp/
